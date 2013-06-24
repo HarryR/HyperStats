@@ -1,0 +1,10 @@
+space stats
+	key id
+	attributes
+		string facet_parent_id,
+		string last_id,		
+		string facet,
+		map(string, int) values
+	subspace facet_parent_id secondary_index facet
+	create 8 partitions
+	tolerate 2 failures

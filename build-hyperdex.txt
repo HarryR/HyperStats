@@ -1,0 +1,16 @@
+sudo apt-get install git autoconf automake autoconf-archive \
+       libtool python-dev python-pyparsing cython libpopt-dev \
+       libcityhash-dev g++ libgoogle-glog-dev bison gperf flex \
+       python-sphinx make pkg-config pandoc help2man zlib1g-dev
+
+git clone git://git.hyperdex.org/po6.git
+git clone git://git.hyperdex.org/e.git
+git clone git://git.hyperdex.org/busybee.git
+git clone git://git.hyperdex.org/replicant.git
+git clone git://git.hyperdex.org/HyperDex.git
+cd po6 && autoreconf -i; ./configure; make && sudo make install
+cd ../e && autoreconf -i; ./configure; make && sudo make install
+cd ../busybee && autoreconf -i; ./configure; make && sudo make install
+cd ../HyperLevelDB && autoreconf -i; ./configure; make && sudo make install
+cd ../Replicant && autoreconf -i; ./configure; make && sudo make install
+cd ../HyperDex && autoreconf -i; ./configure --enable-python-bindings; make && sudo make install
